@@ -1,5 +1,15 @@
 <template>
-  <v-dialog v-model="$parent.$parent.loginDialog" width="25%" persistent>
+  <v-dialog
+    v-model="$parent.$parent.loginDialog"
+    :width="
+      $vuetify.breakpoint.lgAndUp
+        ? '25%'
+        : $vuetify.breakpoint.smAndDown
+        ? '75%'
+        : '50%'
+    "
+    persistent
+  >
     <v-card>
       <v-card-title primary-title> {{ $t('Login') }} </v-card-title>
       <v-card-text>
