@@ -1,7 +1,11 @@
 https://patika-ataturkoglu-data-table.vercel.app/
+<<<<<<< HEAD
 
 # Patika-DataTable
 
+=======
+# Patika-DataTable
+>>>>>>> 97686969049b7714758ec8a64c955501cfb5fa5f
 Patika Full Stack Bootcamp Final Project
 
 - no need to reload page or send new request after crud operations on table for update table datas

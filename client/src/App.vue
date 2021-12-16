@@ -141,6 +141,9 @@ export default {
     this.$store.dispatch('user/userExist');
   },
   created() {
+    if (this.$store.state.user.user == null) {
+      this.loginDialog = true;
+    }
     document.addEventListener('beforeunload', () => {
       let savedCols = {
         factoriesCols: this.$store.state.datatable.factories.columns.map(
@@ -173,6 +176,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding-bottom: 10%;
 }
 #app:before {
   content: '';

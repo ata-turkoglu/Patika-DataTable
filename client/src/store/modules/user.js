@@ -1,5 +1,6 @@
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
+import router from '../../router/router';
 
 export default {
   namespaced: true,
@@ -14,6 +15,7 @@ export default {
       state.user = payload;
       setTimeout(() => {
         state.authenticated = true;
+        router.push({ name: 'Dashboard' });
       }, 1000);
     },
     userLogout(state) {
@@ -106,6 +108,7 @@ export default {
     },
 
     logout({ commit }) {
+      window.localStorage.removeItem('token');
       commit('userLogout');
     },
   },

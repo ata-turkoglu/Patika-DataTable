@@ -48,7 +48,19 @@
               {{ $t('Login failed') }}
             </v-alert>
           </v-row>
-          <v-row v-else justify="end">
+          <v-row v-else justify="end" class="d-flex align-center">
+            <span
+              small
+              class="text-caption teal--text"
+              role="button"
+              @click="
+                ($parent.$parent.registerDialog = true),
+                  ($parent.$parent.loginDialog = false)
+              "
+            >
+              {{ $t('Register') }}
+            </span>
+            <v-spacer></v-spacer>
             <v-btn text @click="$parent.$parent.loginDialog = false">
               {{ $t('Cancel') }}
             </v-btn>

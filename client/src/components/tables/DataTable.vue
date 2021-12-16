@@ -283,11 +283,9 @@ export default {
     },
     dragStart(e) {
       e.target.draggable = true;
-      e.target.style.cursor = 'grab';
       this.dragList = [];
       let element = e.target;
       if (element.tagName == 'TH' && element.textContent != 'Actions') {
-        e.dataTransfer.dropEffect = 'move';
         this.dragSelected = element.textContent.replaceAll(' ', '_');
         this.drag = true;
       }
@@ -343,6 +341,7 @@ export default {
     },
     dragLeave(e) {
       e.target.style['border'] = '';
+      e.target.style.cursor = 'pointer';
     },
     clickRow(item) {
       if (this.tableName == 'Factories') {
@@ -387,5 +386,8 @@ tr {
 }
 .lowercase {
   text-transform: lowercase;
+}
+.actv {
+  cursor: move;
 }
 </style>
