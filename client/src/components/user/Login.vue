@@ -13,33 +13,35 @@
     <v-card>
       <v-card-title primary-title> {{ $t('Login') }} </v-card-title>
       <v-card-text>
-        <v-container>
-          <v-row>
-            <v-text-field
-              label="Email"
-              v-model="user.email"
-              :rules="rules.emailRules"
-              required
-            ></v-text-field>
-          </v-row>
-          <v-row>
-            <v-text-field
-              :label="$t('Password')"
-              v-model="user.password"
-              :append-icon="showPass ? 'mdi-eye' : 'mdi-eye-off'"
-              :type="showPass ? 'text' : 'password'"
-              @click:append="showPass = !showPass"
-              required
-            ></v-text-field>
-          </v-row>
-          <v-row>
-            <v-checkbox
-              :label="$t('Remember Me')"
-              v-model="remember"
-            ></v-checkbox>
-            {{ authenticated }}
-          </v-row>
-        </v-container>
+        <v-form @keyup.native.enter.prevent="login">
+          <v-container>
+            <v-row>
+              <v-text-field
+                label="Email"
+                v-model="user.email"
+                :rules="rules.emailRules"
+                required
+              ></v-text-field>
+            </v-row>
+            <v-row>
+              <v-text-field
+                :label="$t('Password')"
+                v-model="user.password"
+                :append-icon="showPass ? 'mdi-eye' : 'mdi-eye-off'"
+                :type="showPass ? 'text' : 'password'"
+                @click:append="showPass = !showPass"
+                required
+              ></v-text-field>
+            </v-row>
+            <v-row>
+              <v-checkbox
+                :label="$t('Remember Me')"
+                v-model="remember"
+              ></v-checkbox>
+              {{ authenticated }}
+            </v-row>
+          </v-container>
+        </v-form>
       </v-card-text>
       <v-card-actions>
         <v-container fluid>

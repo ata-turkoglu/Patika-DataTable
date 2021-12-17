@@ -13,47 +13,54 @@
     <v-card>
       <v-card-title primary-title> {{ $t('Register') }} </v-card-title>
       <v-card-text>
-        <v-container>
-          <v-row>
-            <v-text-field
-              :label="$t('Username')"
-              v-model="user.username"
-              :rules="rules.nameRules"
-              required
-            ></v-text-field>
-          </v-row>
-          <v-row>
-            <v-text-field
-              label="Email"
-              v-model="user.email"
-              :rules="rules.emailRules"
-              required
-            ></v-text-field>
-          </v-row>
-          <v-row>
-            <v-text-field
-              :label="$t('Password')"
-              v-model="user.password"
-              :rules="rules.passwordRules"
-              :append-icon="showPass ? 'mdi-eye' : 'mdi-eye-off'"
-              :type="showPass ? 'text' : 'password'"
-              @click:append="showPass = !showPass"
-              required
-            ></v-text-field>
-          </v-row>
-          <v-row>
-            <v-radio-group id="roleradio" label="Role" row v-model="user.role">
-              <v-radio label="Admin" value="admin"></v-radio>
-              <v-radio label="Editor" value="editor"></v-radio>
-            </v-radio-group>
-          </v-row>
-          <v-row>
-            <v-checkbox
-              :label="$t('Remember Me')"
-              v-model="remember"
-            ></v-checkbox>
-          </v-row>
-        </v-container>
+        <v-form @keyup.native.enter.prevent="register">
+          <v-container>
+            <v-row>
+              <v-text-field
+                :label="$t('Username')"
+                v-model="user.username"
+                :rules="rules.nameRules"
+                required
+              ></v-text-field>
+            </v-row>
+            <v-row>
+              <v-text-field
+                label="Email"
+                v-model="user.email"
+                :rules="rules.emailRules"
+                required
+              ></v-text-field>
+            </v-row>
+            <v-row>
+              <v-text-field
+                :label="$t('Password')"
+                v-model="user.password"
+                :rules="rules.passwordRules"
+                :append-icon="showPass ? 'mdi-eye' : 'mdi-eye-off'"
+                :type="showPass ? 'text' : 'password'"
+                @click:append="showPass = !showPass"
+                required
+              ></v-text-field>
+            </v-row>
+            <v-row>
+              <v-radio-group
+                id="roleradio"
+                label="Role"
+                row
+                v-model="user.role"
+              >
+                <v-radio label="Admin" value="admin"></v-radio>
+                <v-radio label="Editor" value="editor"></v-radio>
+              </v-radio-group>
+            </v-row>
+            <v-row>
+              <v-checkbox
+                :label="$t('Remember Me')"
+                v-model="remember"
+              ></v-checkbox>
+            </v-row>
+          </v-container>
+        </v-form>
       </v-card-text>
       <v-card-actions>
         <v-container fluid>

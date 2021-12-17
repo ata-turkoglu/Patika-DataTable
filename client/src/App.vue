@@ -93,7 +93,8 @@
         width="50%"
         absolute
         temporary
-        color="transparent"
+        color="grey darken-3"
+        class="opacty"
       >
         <v-list nav shaped>
           <v-list-item-group class="mt-6">
@@ -206,13 +207,18 @@ img {
   width: 100%;
   filter: brightness(45%);
 }
+.opacty {
+  z-index: 2;
+  opacity: 0.8;
+}
 .nav-router {
   width: 40%;
 }
 .router-link-mobile {
   color: white;
+  z-index: 2;
 }
 .v-list-item--active {
-  background-color: white;
+  border-bottom: 2px solid white;
 }
 </style>
