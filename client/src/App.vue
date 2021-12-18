@@ -1,6 +1,13 @@
 <template>
   <v-app id="app">
-    <v-app-bar app color="transparent" dark flat align-center hide-on-scroll>
+    <v-app-bar
+      app
+      color="transparent"
+      dark
+      align-center
+      hide-on-scroll
+      elevation-1
+    >
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.xs"
         @click.stop="drawer = !drawer"
@@ -93,7 +100,7 @@
         width="50%"
         absolute
         temporary
-        color="grey darken-3"
+        color="transparent"
         class="opacty"
       >
         <v-list nav shaped>
@@ -208,8 +215,9 @@ img {
   filter: brightness(45%);
 }
 .opacty {
-  z-index: 2;
   opacity: 0.8;
+  backdrop-filter: blur(20px);
+  background: linear-gradient(to bottom, #13072391, #421b1485);
 }
 .nav-router {
   width: 40%;
