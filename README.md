@@ -1,11 +1,7 @@
 https://patika-ataturkoglu-data-table.vercel.app/
-<<<<<<< HEAD
 
 # Patika-DataTable
 
-=======
-# Patika-DataTable
->>>>>>> 97686969049b7714758ec8a64c955501cfb5fa5f
 Patika Full Stack Bootcamp Final Project
 
 - no need to reload page or send new request after crud operations on table for update table datas
@@ -16,4 +12,4 @@ Patika Full Stack Bootcamp Final Project
 - filter departments by clicking on factories table
 - pagination
 
-![dt1](https://user-images.githubusercontent.com/71823597/146233616-fde6907b-b33d-43a5-9590-9a86f356bc6c.gif)
+![dt1](https://user-images.githubusercontent.com/71823597/146647364-83aee8f0-9d1e-4023-81cd-c81e94ce3e8e.gif)
