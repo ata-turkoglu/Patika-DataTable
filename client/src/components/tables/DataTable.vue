@@ -209,6 +209,17 @@ export default {
       .addEventListener('dragenter', this.moveHeader);
     document
       .getElementById(`${this.tableName}-card`)
+      .addEventListener('dragover', (e) => {
+        e.preventDefault();
+      });
+    document
+      .getElementById(`${this.tableName}-card`)
+      .addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.target.style['border'] = '';
+      });
+    document
+      .getElementById(`${this.tableName}-card`)
       .addEventListener('dragleave', this.dragLeave);
     document
       .getElementById(`${this.tableName}-card`)
@@ -247,10 +258,6 @@ export default {
     tableDataColumns() {
       return this.tableData.columns.slice(1, this.tableData.columns.length - 1);
     },
-    /*
-    tableDataColumnsIndexes() {
-      return this.tableDataColumns.length
-    },*/
   },
   methods: {
     setTableData(data) {
@@ -282,7 +289,6 @@ export default {
       this.dialogs.editRowDialogState = true;
     },
     dragStart(e) {
-      e.target.draggable = true;
       this.dragList = [];
       let element = e.target;
       if (element.tagName == 'TH' && element.textContent != 'Actions') {
@@ -341,7 +347,6 @@ export default {
     },
     dragLeave(e) {
       e.target.style['border'] = '';
-      e.target.style.cursor = 'pointer';
     },
     clickRow(item) {
       if (this.tableName == 'Factories') {
@@ -386,8 +391,5 @@ tr {
 }
 .lowercase {
   text-transform: lowercase;
-}
-.actv {
-  cursor: move;
 }
 </style>
