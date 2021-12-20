@@ -152,17 +152,6 @@ export default {
     if (this.$store.state.user.user == null) {
       this.loginDialog = true;
     }
-    document.addEventListener('beforeunload', () => {
-      let savedCols = {
-        factoriesCols: this.$store.state.datatable.factories.columns.map(
-          (c) => c.attname
-        ),
-        departmentsCols: this.$store.state.datatable.departments.columns.map(
-          (c) => c.attname
-        ),
-      };
-      window.localStorage.setItem('columns', JSON.stringify(savedCols));
-    });
   },
   methods: {
     logout() {

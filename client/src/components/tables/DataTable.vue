@@ -198,12 +198,6 @@ export default {
     this.setTableData(this.data);
   },
   mounted() {
-    window.onbeforeunload = () => {
-      window.localStorage.setItem(
-        `${this.tableName.toLowerCase()}Cols`,
-        JSON.stringify(this.data.columns.map((c) => c.attname))
-      );
-    };
     document
       .getElementById(`${this.tableName}-card`)
       .addEventListener('dragenter', this.moveHeader);
@@ -227,12 +221,6 @@ export default {
     document
       .getElementById(`${this.tableName}-card`)
       .addEventListener('dragend', this.dragEnd);
-  },
-  beforeDestroy() {
-    window.localStorage.setItem(
-      `${this.tableName.toLowerCase()}Cols`,
-      JSON.stringify(this.data.columns.map((c) => c.attname))
-    );
   },
   watch: {
     stateData: {
@@ -343,6 +331,12 @@ export default {
         let header = this.data.columns[this.itemIndex];
         this.data.columns.splice(this.itemIndex, 1);
         this.data.columns.splice(this.targetIndex, 0, header);
+        window.localStorage.setItem(
+          `${
+            this.$store.state.user.user.email
+          }-${this.tableName.toLowerCase()}Cols`,
+          JSON.stringify(this.data.columns.map((c) => c.attname))
+        );
       }
     },
     dragLeave(e) {

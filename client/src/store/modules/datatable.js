@@ -1,4 +1,5 @@
 import axios from 'axios';
+import user from './user';
 
 const setDateFormat = (columns, rowData) => {
   let dates = columns
@@ -25,6 +26,26 @@ const setDateRangeFormat = (columns, rowData) => {
       }
     });
   });
+};
+
+const setColumnsbyLocaleStorage = (table, columns) => {
+  let list = JSON.parse(
+    window.localStorage.getItem(`${user.state.user.email}-${table}Cols`)
+  );
+  if (list) {
+    for (let i = 0; i < columns.length; i++) {
+      if (list.includes(columns[i].attname)) {
+        if (list[i] != columns[i].attname) {
+          let index = list.indexOf(columns[i].attname);
+          let piece = columns[i];
+          columns.splice(i, 1);
+          columns.splice(index, 0, piece);
+          i = -1;
+          continue;
+        }
+      }
+    }
+  }
 };
 
 export default {
@@ -65,6 +86,7 @@ export default {
   },
   actions: {
     async getAll({ commit }, data) {
+      console.log('getAll');
       await axios
         .get(process.env.VUE_APP_API + '/dashboard/datatable/getall', {
           params: {
@@ -72,6 +94,7 @@ export default {
           },
         })
         .then((res) => {
+          setColumnsbyLocaleStorage(data.tableName, res.data.columns);
           //timestamp date datas to date
           setDateFormat(res.data.columns, res.data.rows);
           //set daterange to array
