@@ -12,4 +12,6 @@ Patika Full Stack Bootcamp Final Project
 - filter departments by clicking on factories table
 - pagination
 
+![dt2](https://user-images.githubusercontent.com/71823597/147292579-bf2a7a63-a161-4f69-9b6b-9f46d18d40c2.gif)
+
 ![dt1](https://user-images.githubusercontent.com/71823597/146647364-83aee8f0-9d1e-4023-81cd-c81e94ce3e8e.gif)
