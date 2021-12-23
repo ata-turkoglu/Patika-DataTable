@@ -89,7 +89,7 @@ export default {
               window.localStorage.setItem(
                 'user',
                 JSON.stringify({
-                  token: responseToken.user.username,
+                  username: responseToken.user.username,
                   ...userData.user,
                   role: responseToken.user.role,
                 })
