@@ -33,6 +33,33 @@ Patika Full Stack Bootcamp Final Project
 
 ### Features
 
+### Languages and Frameworks
+
+- JavaScript
+- Vue.js
+- Node.js
+- Express.js
+
+### Libraries
+
+- Vuetify
+- Vuex
+- Vue-Router
+- Axios
+- i18n
+- express-validator
+- bcrypt.js
+- jsonwebtoken
+- mongoose
+- pg
+
+### Databases
+
+- Postgresql
+- MongoDB
+
+### Features
+
 - no need to reload page or send new request after crud operations on table for update table datas
 - you can use drag and drop ordering for table columns
 - responsive design
