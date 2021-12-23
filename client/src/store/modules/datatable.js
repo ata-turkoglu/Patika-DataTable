@@ -86,7 +86,6 @@ export default {
   },
   actions: {
     async getAll({ commit }, data) {
-      console.log('getAll');
       await axios
         .get(process.env.VUE_APP_API + '/dashboard/datatable/getall', {
           params: {
