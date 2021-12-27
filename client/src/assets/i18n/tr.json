@@ -38,5 +38,6 @@
   "Password must be at least 8 characters": "Şifre en az 8 karakter olmalı",
   "At least one capital letter and a number": "En az bir büyük harf bir de rakam olmalı",
   "Show All": "Hepsini Göster",
-  "You can not delete this column": "Bu sütunu silemezsiniz"
+  "You can not delete this column": "Bu sütunu silemezsiniz",
+  "No data":"Veri yok"
 }

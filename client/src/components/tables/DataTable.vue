@@ -7,9 +7,10 @@
       :items="tableData.rows"
       :item-key="tableData.rows.id"
       :items-per-page="itemsPerPage"
-      loading="false"
+      loading="true"
       mobile-breakpoint="960"
       :loading-text="$t('Loading... Please wait')"
+      :no-data-text="$t('No data')"
       class="capitalize"
       :footer-props="{
         'items-per-page-text': $t('Rows Per Page'),
@@ -172,7 +173,7 @@ export default {
   },
   data() {
     return {
-      itemsPerPage: 5,
+      itemsPerPage:-1,
       tableData: {
         columns: [],
         rows: [],

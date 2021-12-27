@@ -38,5 +38,6 @@
   "Password must be at least 8 characters": "Password must be at least 8 characters",
   "At least one capital letter and a number": "At least one capital letter and a number",
   "Show All": "Show All",
-  "You can not delete this column": "You can not delete this column"
+  "You can not delete this column": "You can not delete this column",
+  "No data":"No data"
 }
